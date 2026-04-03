@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>invitación</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sobre para la invitación -->
+    <div class="sobre-container">
+        <div class="sobre">
+            <h2 id="nombreInvitado" class="nombre"></h2>
+            <p id="mensajeInvitacion" class="mensaje"></p>
+            <button id="abrirBtn">Abrir invitación</button>
+        </div>
+    </div>
+
+    <!-- aqui ya empieza la invitacion con el fondo -->
+    <div class="invitacion">
+        <!-- Fondo -->
+        <div class="fondo"></div>
+        <!-- cuerpo de la invitacion -->
+        <main>
+
+            <!-- Primera parte donde estan los nombres -->
+            <section class="hero container">                
+                <p class="subtitulo">Nos casamos</p>
+                <h1>Berenice & Luis</h1>
+                <p class="fecha">Octubre 17, 2026</p>
+            </section>
+
+            <!-- Contador de los dias que faltan para la boda -->
+            <h2 class="titulo-contador container">Faltan:</h2>
+            <section class="contador">
+                <div class="tiempo"><span id="dias">00</span><p>Días</p></div>
+                <div class="tiempo"><span id="horas">00</span><p>Horas</p></div>
+                <div class="tiempo"><span id="minutos">00</span><p>Minutos</p></div>
+                <div class="tiempo"><span id="segundos">00</span><p>Segundos</p></div>
+            </section>
+
+            <!-- Espacio de imagen  -->
+            <img src="./img/anillos.jpeg" alt="">
+
+            <!-- Nombres de los padres de los novios -->
+            <section class="infoPadres">
+                <h2>Nuestros padres:</h2>
+                <div class="padres container">
+                    <div class="nombres">
+                        <i class="fa-solid fa-heart"></i>
+                        <h3>Gerardo Martinez Galicia</h3> 
+                        <span>&</span>
+                        <h3>Citlalli Mariana Galicia Florin</h3>
+                    </div>
+
+                    <div class = "vertical"></div>
+
+                    <div class="nombres">
+                        <i class="fa-solid fa-heart"></i>
+                        <h3>Manuel Salas Lopez</h3> 
+                        <span>&</span>
+                        <h3>Olga Lilia Silva Mendoza</h3>
+                    </div>
+                </div> 
+            </section>
+
+            <!-- Slider con los nombres de los padrinos -->
+            <section class="padrinos container">
+                <h2>Nuestros padrinos:</h2>
+
+                <div class="slider">
+
+                    <div class="card">
+                        <p class="tipo">Velación</p>
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                        <h3>Bernardo Salas López</h3>
+                        <span>&</span>
+                        <h3>Yanis Mena de León</h3>
+                    </div>
+
+                    <div class="card">
+                        <p class="tipo">Anillos</p>
+                        <i class="fa-solid fa-ring"></i>
+                        <i class="fa-solid fa-gem"></i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-link"></i>
+                        <h3>Juan Manuel Silva Mendoza</h3>
+                    </div>
+
+                    <div class="card">
+                        <p class="tipo">Lazo</p>
+                        <i class="fa-solid fa-link"></i> 
+                        <i class="fa-solid fa-infinity"></i>
+                        <h3>Miguel Salas López</h3>
+                        <span>&</span>
+                        <h3>Clotilde Díaz Aguilar</h3>
+                    </div>
+
+                    <div class="card">
+                        <p class="tipo">Arras</p>
+                        <i class="fa-solid fa-coins"></i>
+                        <h3>Maria de Jesus Galicia Florin</h3>
+                    </div>
+
+                    <div class="card">
+                        <p class="tipo">Biblia</p>
+                        <i class="fa-solid fa-book-bible"></i>
+                        <h3>Victor Andres Florin Guzman</h3>
+                    </div>
+
+                       
+                </div>
+            </section>
+
+            <!-- Un pequeño texto -->
+            <p class="frase container">Sería una gran alegría para nosotros si pudieras acompañarnos en esta ocasión tan especial.</p>
+
+            <!-- Indicacion de hora, fecha y ubicacion -->
+            <h2>Lugar y Hora</h2>
+
+            <!-- Lugar de la ceremonia (iglesia) -->
+            <h2 class="iglesia">Ceremonia</h2>
+            <section class="ceremony container ">
+                <div class="place">
+                    <p>Miguel Hidalgo Manzana 013, Ayotepec, 56680 Cocotitlán, Méx.</p> 
+                    <a href="https://www.google.com/maps/place/Parroquia+Inmaculada+Concepci%C3%B3n+de+Cocotitl%C3%A1n,+Miguel+Hidalgo+Manzana+013,+Ayotepec,+56680+Cocotitl%C3%A1n,+M%C3%A9x./data=!4m2!3m1!1s0x85ce18e97af2e9e9:0xa9b25eea58916030?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjIwLjEYACDXggMqhgEsOTQyNjc3Mjk5NDI3NTMwNCw5NDIyMzI5OSw5NDIxNjQxMyw5NDIxMjQ5Niw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxNzUyMyw5NDIxODY1Myw5NDIyOTgzOSw5NDI3NTE2OCw0NzA4NDM5Myw5NDIxMzIwMCw5NDI1ODMyNUICTVg%3D&skid=14a70023-abbb-4683-b2d2-7fac777b8c82&g_st=aw" class="location" target="_blank"><i class="fa-solid fa-location-dot"></i>Ver ubicacion</a>
+                </div>
+
+                <div class = "lineaCorta"></div>
+
+                <div class="horaCeremony">
+                    <h3>Hora:</h3>
+                    3:00pm
+                </div>
+            </section>
+
+            <!-- Lugar de Recepcion (Salon o jardin) -->
+            <h2 class="salon">Recepción</h2>
+            <section class="reception container">
+                <div class="place">
+                    <p>Jardín Rococo <br> Centenario de La Educación Manzana 034, Techichilco, 56680 Cocotitlán, Méx.
+                    </p>
+                    <a href=https://www.google.com/maps/place/Jard%C3%ADn+Rococo/@19.232796,-98.8629734,17z/data=!4m14!1m7!3m6!1s0x85ce18eaee20aa8d:0xe22307316e23afd7!2sPante%C3%B3n+Municipal+Cocotitl%C3%A1n!8m2!3d19.232791!4d-98.8603985!16s%2Fg%2F11cs5gpn93!3m5!1s0x85ce19e1a708d58f:0x86c342e44e1e14cf!8m2!3d19.232207!4d-98.8601408!16s%2Fg%2F11xh92t0yy?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D class="location" target="_blank"><i class="fa-solid fa-location-dot"></i>Ver ubicacion</a>
+                </div>
+
+                <div class = "lineaCorta"></div>
+
+                <div class="horaReception">
+                    <h3>Hora:</h3>
+                    4:00pm
+                </div>
+            </section>
+
+            <!-- Codigo de vestimenta -->
+            <section class="dressCode">
+                <h2>Código de vestimenta</h2>
+                <p class="frase container">Lo que más nos importa es que nos acompañes este día tan especial, así que ponte lo que te haga sentir más comodo no olvides que el blanco esta reservado para la novia </p>
+            </section>
+
+            <!-- Confirmación de aistencia -->
+            <section class="confirmacion">
+                <h2>Confirmar asistencia</h2>
+                <p>Ayúdanos confirmando tu asistencia</p>
+                <a id="btnConfirmar" target="_blank" class="btn-confirmar">Confirmar asistencia</a>
+            </section>
+
+            <!-- Mesa de Regalos -->
+            <section class="regalos container">
+                <h2>Mesa de regalos</h2>
+                <p>Tu presencia es lo más importante para nosotros, pero si deseas hacernos un obsequio, será bien recibido 💛</p>
+            </section>
+
+            <!-- Sugerencia de musica -->
+            <section class="canciones">
+                <h2>Música</h2>
+                <p>Ayúdanos a crear la mejor fiesta 🎉 Déjanos tu canción favorita en el formulario </p>
+            </section>
+        </main>
+    </div>
+    <script src="./js/app.js"></script> 
+</body>
+
+</html>

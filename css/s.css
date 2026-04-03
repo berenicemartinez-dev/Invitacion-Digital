@@ -1,0 +1,400 @@
+*{
+    padding: 1px;
+    margin: 1px;
+}
+.sobre-container {
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f5f2;
+}
+
+.sobre {
+  width: 320px;
+  height: 220px;
+  background: white;
+  background-image: url('../img/NuestraBoda.png');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 1.5s ease;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.sobre.abriendo {
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.sobre h2 {
+  margin-top: 12px;
+  color: #2C3E50;
+}
+
+.sobre button {
+  background: #C5A059;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 11rem;
+}
+
+.sobre button:hover {
+  opacity: 0.8;
+}
+.invitacion {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.invitacion.mostrar {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fondo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fondo.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: -1; 
+}
+.fondo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.4);
+}
+main{
+    text-align: center;
+}
+.anillos{
+  margin-top: 40px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero {
+    animation: fadeIn 2s ease;
+    text-align: center;
+    padding: 70px 20px;
+    color: #326e92;
+    backdrop-filter: blur(2px); 
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+    max-width: 500px;
+    width: 90%;
+    margin: 80px auto;
+}
+h2{
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+  color: #C5A059;
+}
+.subtitulo {
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-family: 'tangerine', cursive;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #C5A059;
+    text-shadow: 3px 3px 7px hsl(39, 48%, 56%);
+    margin: 10px 0;
+}
+.fecha {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    display: flex;
+  align-items: center;
+}
+.fecha::before, .fecha::after{
+    flex: 1;
+  content: '';
+  padding: 1px;
+  /* background-color: rgb(138, 141, 144); */
+background: linear-gradient(to right, #ccc 0%, #333 50%, #ccc 100%);
+  margin: 5px;
+}
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+}
+.titulo-contador {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #C5A059;
+}
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1px;
+ 
+}
+.tiempo {
+  text-align: center;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+  padding: 5px;
+  border-radius: 12px;
+  min-width: 70px;
+}
+
+.tiempo span {
+  font-size: 32px;
+  font-weight: bold;
+  color: #326e92;
+  display: block;
+  letter-spacing: 2px;
+}
+
+.tiempo p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  color: #C5A059;
+}
+img{
+  max-width: 20%;
+  height: auto;
+  background-size: cover;
+  background-position: center top; 
+  /* opacity: 0.6;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5); */
+ filter: opacity(80%);
+ border-radius: 10px;
+  margin: 30px 0;
+}
+i {
+  color: #C9A646; /* dorado elegante */
+  margin-right: 8px;
+  font-size: 16px;
+  text-shadow: 0 0 5px rgba(201,166,70,0.5);
+}
+i {
+  transition: transform 0.2s ease;
+}
+
+i:hover {
+  transform: scale(1.2);
+}
+.infoPadres{
+    text-align: center;
+    padding: 60px 20px;
+}
+.padres{
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    max-width: 500px;
+    width: 90%;
+    margin: 40px auto;
+}
+.novio h3, .novia h3 {
+  margin: 5px 0;
+  font-weight: bold;
+  color: #326e92;
+}
+
+.novio span, .novia span {
+  display: block;
+  margin: 10px 0;
+  color: #6e6e6e;
+   font-weight: bold;
+}
+.padrinos {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.padrinos h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #C5A059;
+}
+
+/* SLIDER */
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+   max-width: 500px;
+    width: 90%;
+    margin: 10px auto;
+}
+
+/* TARJETAS */
+.card {
+  min-width: 260px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(2px);
+  border-radius: 15px;
+  padding: 30px 20px;
+  scroll-snap-align: center;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  /* transition: 0.3s; */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  /* transform: scale(1.05); */
+}
+
+/* TEXTO */
+.tipo {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #C5A059;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 5px 0;
+  font-weight: bold;
+  color: #326e92;
+}
+
+.card span {
+    font-weight: bold;
+  display: block;
+  margin: 10px 0;
+   color: #6e6e6e;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+.vertical {
+    background: linear-gradient(to bottom, #dbe4f5 0%, #004aad 50%, #dbe4f5 100%);
+    height: 120px;
+    position:absolute;
+    margin: 1px;
+    left: 52%;
+}
+.frase{
+  color: #004aad;
+  font-size: x-large;
+  max-width: 500px;
+  width: 90%;
+  margin: 10px auto;
+}
+.separacion {
+    background: linear-gradient(to bottom, #dbe4f5 0%, #004aad 50%, #dbe4f5 100%);
+    height: 50px;
+    margin: 1px;
+    left: 20%;
+}
+.separacionH {
+    background: linear-gradient(to bottom, #dbe4f5 0%, #004aad 50%, #dbe4f5 100%);
+    height: 50px;
+    margin: 1px;
+    left: 52%;
+}
+
+ .ceremony,
+.reception {
+    display: flex;
+    position: relative;
+    align-items: center;
+     justify-content: space-between; 
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    width: 50%;
+    margin: 10px auto;
+    color: #004aad;
+    font-size: larger;
+    font-weight: 700;
+}
+.location {
+  text-decoration: none;
+  border-bottom: 1px solid #6c63ff;
+}
+.ceremony {
+  margin-right: auto; 
+   transform: translateX(-50px);
+}
+.iglesia{
+    color: #326e92;
+    margin-right: auto;
+   transform: translateX(-100px);
+}
+.reception {
+  margin-left: auto;
+   transform: translateX(50px);
+}
+
+.salon{
+    color: #326e92;
+    margin-left: auto; 
+} 
+
+.confirmacion {
+  text-align: center;
+  margin: 60px 20px;
+  font-size: large;
+
+}
+
+.btn-confirmar {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #c9a46c; /* dorado */
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  /* transition: 0.3s; */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-confirmar:hover {
+  background-color: #b8935c;
+   transform: scale(1.05);
+}
+.canciones, .regalos{
+      width: 50%;
+    margin: 10px auto;
+    font-size: large;
+} 
+
