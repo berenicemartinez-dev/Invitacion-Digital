@@ -16,6 +16,12 @@ const abrirInvitacion = () => {
     }, 50);
 
   }, 600);
+ 
+  const musica = document.getElementById("musica");
+  musica.play().catch(() => {
+    console.log("El navegador bloqueó el autoplay");
+  });
+
 };
 
 document.getElementById("abrirBtn").addEventListener("click", abrirInvitacion);
@@ -30,17 +36,42 @@ if (sello) {
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const nombre = params.get("nombre");
+
   const nombreElemento = document.getElementById("nombreInvitado");
   const mensajeElemento = document.getElementById("mensajeInvitacion");
+  const audio = document.getElementById("musica");
+  const btn = document.getElementById("btnPlay");
+  const progreso = document.getElementById("progreso");
+  
 
+  /* Nombre dinamico para la tarjeta principal */
   if(nombre){
     nombreElemento.textContent = nombre;
-  } else {
-/*     nombreElemento.textContent = "Nos encantaría que formaras parte de este día tan especial";*/   
- nombreElemento.textContent = "De: Berenice y Luis";
-
+  } else {  
+    nombreElemento.textContent = "De: Berenice y Luis";
   }
-  mensajeElemento.textContent = "Te invitamos a nuestra boda";
+  mensajeElemento.textContent = "Eres muy especial para nosotros por eso queremos que seas parte de esta gran celebracion";
+  
+  /* reproduccion de musica */
+  audio.volume = 0.3;
+
+  btn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = "⏸";
+    } else {
+      audio.pause();
+      btn.textContent = "▶";
+    }
+  });
+
+  /* Barra de progreso del sonido */
+  audio.addEventListener("timeupdate", () => {
+    if (!isNaN(audio.duration)) {
+      const porcentaje = (audio.currentTime / audio.duration) * 100;
+      progreso.style.width = porcentaje + "%";
+    }
+  });
 });
 
 
@@ -61,7 +92,7 @@ const countdown = setInterval(() => {
   document.getElementById("segundos").innerHTML = segundos;
 
   if (distancia < 0) {
-    clearInterval(contador);
+    clearInterval(countdown);
     document.querySelector(".contador").innerHTML = "¡Hoy es el gran día!";
   }
 
@@ -77,8 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let linkFinal = formBase;
 
   if (nombre) {
-     linkFinal += "&entry.750116087=" + encodeURIComponent(nombre);
-
-    document.getElementById("btnConfirmar").href = linkFinal
+    linkFinal += "&entry.750116087=" + encodeURIComponent(nombre);
   }
+  document.getElementById("btnConfirmar").href = linkFinal
 });

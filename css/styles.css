@@ -4,6 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* variables para colores */
+:root {
+  --azul: #326e92; /* var(--azul) */
+  --dorado: #C5A059; /* var(--dorado) */
+  --azul-oscuro: #004aad; /* var(--azul-oscuro) */
+  --texto: #2c4a6b; /* var(--texto) */
+}
 /* Para las animaciones */
 @keyframes fadeIn {
   from {
@@ -15,29 +22,47 @@
     transform: translateY(0);
   }
 }
+section {
+  margin: 60px 0;
+}
 /* Contenido para que se ajuste al tamaño  */
 .container {
   max-width: 500px;
   width: 90%;
   margin: 0 auto;
 }
+
 /* Estilos para la parte del sobre con animacion y boton */
 .sobre-container {
-  background: #f8f5f2; 
+  background-image: url('../img/fondoAzul.png');
+  background-size: cover;
   min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
+.boda{
+  margin-top:-4rem;
+  margin-bottom: 30px;
+  font-family: 'tangerine', cursive;
+  font-size: 60px;
+  color: var(--azul-oscuro);
+}
 .sobre {
-  width: 330px;
-  height: 250px;
+  width: 430px;
+  height: 350px; 
   background: white;
-  background-image: url('../img/NuestraBoda.png');
+  background-image: 
+  linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+  url("../img/Nuestraboda1.png");
+ /*  background-image: url('../img/Nuestraboda1.png'); */
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  padding: 40px;
+ 
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -45,33 +70,43 @@
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 .nombre {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
-  margin-top: -20px;
+  margin-top: -3px;
   line-height: 1.4;
+  color: var(--azul);
 }
 .mensaje {
+  margin-top: -5px;
   font-size: 20px;
   opacity: 0.8;
+  color: var(--texto);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  padding: 0 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 .sobre.abriendo {
   transform: scale(0.9);
   opacity: 0;
   transition: all 0.6s ease;
 }
-.sobre h2 {
-   margin-top: 8px; 
-  color: #2C3E50;
-}
+
 .sobre button {
-  background: #C5A059;
+  background: var(--azul-oscuro);
   color: white;
   border: none;
   padding: 12px 25px;
-  border-radius: 6px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 5rem;
+  margin-top: 1rem;
+}
+.sello{
+  max-width: 40%;
+  margin-top: -2rem;
+  cursor: pointer;
 }
 .sobre button:hover {
   opacity: 0.8;
@@ -118,7 +153,7 @@ main{
   animation: fadeIn 2s ease;
   text-align: center;
   padding: 70px 20px;
-  color: #326e92;
+  color: var(--azul);
   backdrop-filter: blur(2px); 
   background-color: rgba(255,255,255,0.3);
   border-radius: 10px;
@@ -135,7 +170,7 @@ main{
   font-family: 'tangerine', cursive;
   font-weight: 700;
   font-size: 5rem;
-  color: #C5A059;
+  color: var(--dorado);
   text-shadow: 3px 3px 7px hsl(39, 48%, 56%);
   margin: 10px 0;
 }
@@ -160,21 +195,77 @@ main{
 h2{
   text-align: center;
   font-family: 'Playfair Display', serif;
-  margin: 20px 0;
-  color: #C5A059;
+  margin: 30px auto;
+  color: var(--dorado);
+  font-size: 2rem;
+}
+/* Estilos para el reproductor de musica */
+.player {
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(6px);
+  padding: 10px 15px;
+  border-radius: 15px;
+  width: 260px;
+  margin: 20px auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+   opacity: 0;
+  transform: translateY(20px);
+  animation: aparecerPlayer 0.8s ease forwards;
+  animation-delay: 0.5s;
+  max-width: 280px;
+  margin: 30px auto;
+}
+@keyframes aparecerPlayer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.player .artista {
+  font-size: 0.8rem;
+  color: #777;
+}
+.barra {
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 5px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.progreso {
+  height: 100%;
+  width: 0%;
+  background: var(--dorado);
+  transition: width 0.2s linear;
+}
+#btnPlay {
+  background: transparent;
+  border: none;
+  color: var(--azul);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-size: xx-large;
+  text-align: center;
 }
 /* Estilos para el contador de dias */
 .titulo-contador {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  color: #C5A059;
-  margin-top: 50px;
+  color: var(--dorado);
+  margin: 50px auto;
 }
 .contador {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 1px;
+  font-size: large;
  
 }
 .tiempo {
@@ -188,7 +279,7 @@ h2{
 .tiempo span {
   font-size: 32px;
   font-weight: bold;
-  color: #326e92;
+  color: var(--azul);
   display: block;
   letter-spacing: 2px;
 }
@@ -196,21 +287,20 @@ h2{
   font-size: 12px;
   letter-spacing: 2px;
   margin-top: 5px;
-  color: #C5A059;
+  color: var(--dorado);
 }
 /* imagen */
-img{
-  max-width: 20%;
-  height: auto;
-  background-size: cover;
-  background-position: center top; 
-  filter: opacity(80%);
+.anillos{
+ width: 50%;
+  max-width: 150px;
+  margin: 50px auto 20px;
+  display: block;
+  opacity: 0.8;
   border-radius: 10px;
-  margin: 50px auto 20px auto ;
 }
 /* Estilos para los iconos  */
 i {
-  color: #C9A646; /* dorado elegante */
+  color: var(--dorado); /* dorado elegante */
   margin-right: 8px;
   font-size: 16px;
   text-shadow: 0 0 5px rgba(201,166,70,0.5);
@@ -223,19 +313,24 @@ i:hover {
 /* Estilos para la informacion de los padres */
 .infoPadres{
   text-align: center;
-  padding: 60px 20px;
   position: relative;
 }
 .padres{
   display: flex;
-  gap: 35px;
+   align-items: center;
+  justify-content: center;
+  gap: 30px;
   overflow-x: auto;
   padding: 5px;
   scroll-snap-type: x mandatory;
-}.nombres h3{
+}
+.nombres {
+  max-width: 200px;
+}
+.nombres h3{
   margin: 5px 0;
   font-weight: bold;
-  color: #326e92;
+  color: var(--azul);
 }
 .nombres span{
   display: block;
@@ -246,23 +341,18 @@ i:hover {
 .vertical { 
   height: 140px;
   width: 2px;
-  background: linear-gradient(to bottom, transparent, #004aad, transparent);
+  background: linear-gradient(to bottom, transparent, var(--azul-oscuro), transparent);
   position: absolute;
-  margin: 20px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 10px;
+/*   left: 50%;
+   top: 50%; 
+  transform: translate(-50%, -50%); */
 }
 /* Estilos para los nombres de los padrinos 
 en un slider */
 .padrinos {
   text-align: center;
   padding: 10px 20px;
-}
-.padrinos h2 {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  color: #C5A059;
 }
 /* SLIDER */
 .slider {
@@ -296,13 +386,13 @@ en un slider */
 .tipo {
   font-size: 18px;
   letter-spacing: 2px;
-  color: #C5A059;
+  color: var(--dorado);
   margin-bottom: 15px;
 }
 .card h3 {
   margin: 5px 0;
   font-weight: bold;
-  color: #326e92;
+  color: var(--azul);
 }
 .card span {
     font-weight: bold;
@@ -312,8 +402,9 @@ en un slider */
 }
 /* Texto  */
 .frase{
-  color: #004aad;
+  color: var(--azul-oscuro);
   font-size: x-large;
+  margin-top: 1rem;
 }
 
  .ceremony,
@@ -322,50 +413,47 @@ en un slider */
     position: relative;
     align-items: center;
     justify-content: space-between; 
-    gap: 30px;
+    gap: 20px;
     overflow-x: auto;
     padding: 10px;
     scroll-snap-type: x mandatory;
-    color: #004aad;
+    color: var(--azul-oscuro);
     font-size: larger;
-    font-weight: 700;
+    
 }
 .location {
   text-decoration: none;
   border-bottom: 1px solid #6c63ff;
 }
-.ceremony {
-  margin-right: auto; 
-   transform: translateX(-50px);
-}
 .iglesia{
-    color: #326e92;
-    margin-right: auto;
-   transform: translateX(-50px);
-}
+  color: var(--azul);
+} 
 .reception {
   margin-left: auto;
-   transform: translateX(50px);
+   
 }
 
 .salon{
-    color: #326e92;
-    margin-left: auto; 
+    color: var(--azul);
 } 
 .horaCeremony h3,
 .horaReception h3 {
-  font-size: large;
-  margin: 5px;
+  font-size:x-large;
+  
 }
 
 /*  */
 .lineaCorta{
-width: 2px;
-  height: 60px;
-  background: linear-gradient(to bottom, #dbe4f5, #004aad, #dbe4f5);
+  width: 3px;
+  height: 70px;
+  background: linear-gradient(to bottom, #dbe4f5, var(--azul-oscuro), #dbe4f5);
+  margin: 0 10px;
+  opacity: 0.7;
 }
 
-
+.dressCode{
+  font-size: large;
+}
 
 .confirmacion {
   text-align: center;
@@ -386,6 +474,8 @@ width: 2px;
   /* transition: 0.3s; */
   cursor: pointer;
   transition: transform 0.2s ease;
+  box-shadow: 0 8px 20px rgba(197,160,89,0.3);
+  font-size: 1rem;
 }
 
 .btn-confirmar:hover {
@@ -393,10 +483,29 @@ width: 2px;
    transform: scale(1.05);
 }
 .canciones, .regalos{
-      width: 50%;
-    margin: 10px auto;
-    font-size: large;
+  font-size: large;
 } 
+.gift i{
+  font-size: 3rem;
+  margin-top: 20px;
+  text-shadow: 0 0 10px rgba(201,166,70,0.8);
+}
+.footer {
+   text-align: center;
+  padding: 30px 20px;
+  font-size: 0.85rem;
+  color: #888;
+  opacity: 0.8;
+  /* text-align: center;
+  margin: 50px 0 20px;
+  font-size: 0.75rem;
+  color: #888; */
+}
+
+.creditos {
+  margin-top: 5px;
+  opacity: 0.6;
+}
 /* =========================
    RESPONSIVE (CELULAR)
 ========================= */
@@ -460,12 +569,11 @@ width: 2px;
     align-items: center;
     text-align: center;
     transform: none; /* quitamos desplazamientos raros */
+    min-width: 260px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    border-radius: 25px;
   }
-
-  .ceremony {
-    transform: none;
-  }
-
   .reception {
     transform: none;
   }
@@ -476,10 +584,16 @@ width: 2px;
     margin: 0;
     text-align: center;
   }
+  .salon {
+    margin-top: 1rem;
+  }
+  .lineaCorta{
+    display: none;
+  }
 
   /* FRASES */
   .frase {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0 10px;
   }
 
@@ -492,6 +606,9 @@ width: 2px;
   .canciones,
   .regalos {
     width: 90%;
+  }
+  .gift i{
+    width: 75%;
   }
 }
  
