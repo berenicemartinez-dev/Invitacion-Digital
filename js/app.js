@@ -26,6 +26,22 @@ const abrirInvitacion = () => {
 
 document.getElementById("abrirBtn").addEventListener("click", abrirInvitacion);
 
+
+const abrirBtn = document.getElementById("abrirBtn");
+const sobre = document.querySelector(".sobre-container");
+const invitacion = document.querySelector(".invitacion");
+const loader = document.getElementById("loader");
+
+abrirBtn.addEventListener("click", () => {
+  loader.classList.add("mostrar");
+  sobre.classList.add("abriendo");
+
+  setTimeout(() => {
+    sobre.style.display = "none";
+    loader.style.display = "none";
+    invitacion.classList.add("mostrar");
+  }, 1500);
+});
 // opcional: sello también abre
 const sello = document.getElementById("sello");
 if (sello) {
