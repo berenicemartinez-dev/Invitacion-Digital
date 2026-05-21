@@ -60,7 +60,7 @@
   --preview: url('../img/themes/celestial-love/fondo-inicio.png');/* var(--preview) */
   /* fondo con un poco de color para que se va mas tenue */
    --sobre-tarjeta: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),/* var(--sobre-tarjeta) */
-  url("../../img/themes/celestial-love/tarjeta-sobre.png");/* var(--sobre-tarjeta) */
+  url("../img/themes/celestial-love/tarjeta-sobre.png");/* var(--sobre-tarjeta) */
   --fondo-desktop:  url('../img/themes/celestial-love/fondo-desktop.png'); /* var(--fondo-desktop) */
   --fondo-mobile: url('../img/themes/celestial-love/fondos-mobile.png');
 
