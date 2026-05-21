@@ -105,5 +105,5 @@ const countdown = setInterval(() => {
 const themeLink = document.getElementById("theme-style");
 
 function cambiarTema(theme){
-  themeLink.href = `css/themes/${theme}.css`;
+  themeLink.href = `./css/themes/${theme}.css`;
 }
