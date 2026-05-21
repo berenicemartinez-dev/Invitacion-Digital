@@ -1,0 +1,91 @@
+/* variables para colores */
+:root {
+  /* =====================
+   COLORS
+  ===================== */
+  /* color de subtilos hero,nombres,btn-musica,numeros-contador */
+  --color-primary: #326e92; /* var(--color-primary) */
+  /* texto loader, nombres de los novios, h2, progreso-musica texto-contador,iconos, tipo-padrinos, regalo, */
+  --color-secondary: #C5A059; /* var(--color-secondary) */
+  /* titulo-tajeta/sobre,  btn-tarjeta/sobre, lineas-decorativas, textos-secciones*/
+  --color-accent: #004aad; /* var(--color-accent) */
+  /* color suave para el hero y el player */
+  --color-hero: rgba(255,255,255,0.3); /* var(--color-hero) */
+  /* color de la barra de progreso de la musica */
+  --bar-player: rgba(0,0,0,0.1); /* var(--bar-player) */
+  --boton-confirmar: #c9a46c ; /* var(--boton-confirmar) */
+  --hover-btn-confirmar:  #b8935c; /* var(--hover-btn-confirmar) */
+
+  /* =====================
+   TEXT
+  ===================== */
+  /* texto mensaje de tarjeta/sobre*/
+  --text-message: #2c4a6b; /* var(--text-message) */
+  /* textos de los botones,  */
+  --text-light: #ffffff; /* var(--text-light) */
+  /* para el footer y la "&" que llevan los padrinos y padres */
+  --text-soft: #6e6e6e; /* var(--text-soft) */
+  /* sombra nombre de los novios */
+  --text-name-shadow: 3px 3px 7px hsl(39, 48%, 56%); /* var(--text-name-shadow) */
+
+  /* =====================
+   BACKGROUNDS
+  ===================== */
+  /* color de fondo cuando esta cargando la invitacion despues de tarjeta/sobre */
+  --loader-soft: rgba(255, 255, 255, 0.9); /* var(--loader-soft) */
+  /* atenuar el fondo  */
+  --background-light: rgba(255,255,255,0.4); /* var(--background-light) */
+  /* clor de las cards de padrinos */
+  --background-card: rgba(255,255,255,0.1); /* var(--background-card) */
+
+  /* =====================
+    SHADOWS
+  ===================== */
+  /* sobra en el sobre/tarjeta, hero */
+  --sombra-suave: 0 10px 30px rgba(0,0,0,0.1); /*var(--sombra-suave) */
+  /* sombra del mensaje de tarjeta/sobre */
+  --sombra-message-tarjeta: 1px 1px 3px rgba(0, 0, 0, 0.25);/* var(--sombra-message-tarjeta) */
+  /* sombra del contenedor de player */
+  --shadow-player: 0 8px 20px rgba(0,0,0,0.1); /* var(--shadow-player) */
+  --box-shadow-card: 0 10px 25px rgba(0,0,0,0.1); /* var(--box-shadow-card) */
+  --shadow-card-hover: 0 10px 20px rgba(0,0,0,0.1); /* var(--shadow-card-hover) */
+  --shadow-btn-confirmar: 0 8px 20px rgba(197,160,89,0.3); /* var(--shadow-btn-confirmar) */
+  --gift-text-shadow: 0 0 10px rgba(201,166,70,0.8); /* var(--gift-text-shadow) */
+  --box-shadow-theme-selector: 0 0 0 2px rgba(0,0,0,0.2);/*  var(--box-shadow-theme-selector) */
+
+  /* =====================
+   IMG BACKGROUNDS
+  ===================== */
+  /* imagenes de fondo */
+  --preview: url('../../img/themes/celestial-love/fondo-inicio.png');/* var(--preview) */
+  /* fondo con un poco de color para que se va mas tenue */
+   --sobre-tarjeta: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),/* var(--sobre-tarjeta) */
+  url("../../img/themes/celestial-love/tarjeta-sobre.png");/* var(--sobre-tarjeta) */
+  --fondo-desktop:  url('../img/themes/celestial-love/fondo-desktop.png'); /* var(--fondo-desktop) */
+  --fondo-mobile: url('../img/themes/celestial-love/fondos-mobile.png');
+
+  /* =====================
+   COLOR THEMES
+  ===================== */
+  --selector-theme-blue: #679de3; /* var (--selector-theme-blue) */
+  --selector-theme-green: #799661; /* var(--selector-theme-green) */
+  --selector-theme-desert: #9c533d; /* var(--selector-theme-desert) */
+  --selector-theme-ivory: #dbcab5; /* var(--selector-theme-ivory) */
+
+  /* =====================
+   DECORATIONS
+  ===================== */
+  /* border-radius para el sobre/tarjeta, y fecha */
+  --radio: 12px; /* var(--radio) */
+  --transicion: all 0.3s ease ; /* var(--transicion) */
+  /* font loader, h2 titulo,contador*/
+  --font-secondary-text: 'Playfair Display', serif; /* var(--font-secondary-text) */
+  /* opacidad paralas cards como padrinos, y la ubicacion en responsive, hero */
+  --filter-cards: blur(2px); /* var(--filter-cards) */
+  /* lineas decorativas de fecha-hero */
+  --linear-date: linear-gradient(to right, #ccc 0%, #333 50%, #ccc 100%); /* var(--linear-date) */
+  /* sombra en los iconos */
+  --icon-shadow: 0 0 5px rgba(201,166,70,0.5); /* var(--icon-shadow) */
+  --border-test-link: 1px solid #6c63ff; /* var(--border-test-link) */
+  --border-card: 1px solid rgba(255,255,255,0.3); /* var(--border-card) */
+}

@@ -1,75 +1,56 @@
-const abrirInvitacion = () => {
-  const sobre = document.querySelector(".sobre");
-  const contenedor = document.querySelector(".sobre-container");
-  const invitacion = document.querySelector(".invitacion");
-
-  // animar sobre
-  sobre.classList.add("abriendo");
-
-  setTimeout(() => {
-    contenedor.style.display = "none";
-    invitacion.style.display = "block";
-
-    // pequeño delay para que se vea bonito
-    setTimeout(() => {
-      invitacion.classList.add("mostrar");
-    }, 50);
-
-  }, 600);
- 
-  const musica = document.getElementById("musica");
-  musica.play().catch(() => {
-    console.log("El navegador bloqueó el autoplay");
-  });
-
-};
-
-document.getElementById("abrirBtn").addEventListener("click", abrirInvitacion);
-
-
-const abrirBtn = document.getElementById("abrirBtn");
-const sobre = document.querySelector(".sobre-container");
+const sobre = document.querySelector(".sobre");
+const contenedor = document.querySelector(".sobre-container");
 const invitacion = document.querySelector(".invitacion");
+const audio = document.getElementById("musica");
+const abrirBtn = document.getElementById("abrirBtn");
 const loader = document.getElementById("loader");
+/* enlace para el formulario y traer el nombre del invitado */
+const params = new URLSearchParams(window.location.search);
+const nombre = params.get("nombre");
 
+const nombreElemento = document.getElementById("nombreInvitado");
+const mensajeElemento = document.getElementById("mensajeInvitacion");
+  /* boton para la musica  */
+const btn = document.getElementById("btnPlay");
+const progreso = document.getElementById("progreso");
+const formBase = "https://docs.google.com/forms/d/e/1FAIpQLSeM54Q7NX_DiJJec_pzC0yGckE6zcGxubWKhom8X0Jmc_YY0Q/viewform?usp=preview";
+let linkFinal = formBase;
+
+/* --------Parte principal de la invitación------ */
 abrirBtn.addEventListener("click", () => {
+  // mostrar loader
   loader.classList.add("mostrar");
+  // animacion sobre
   sobre.classList.add("abriendo");
 
   setTimeout(() => {
-    sobre.style.display = "none";
+    // ocultar sobre
+    contenedor.style.display = "none";
+    // ocultar loader
     loader.style.display = "none";
+    // mostrar invitacion
     invitacion.classList.add("mostrar");
   }, 1500);
+  // reproducir musica
+  audio.play().catch(() => {
+    console.log("El navegador bloqueó el autoplay");
+  });
 });
-// opcional: sello también abre
-const sello = document.getElementById("sello");
-if (sello) {
-  sello.addEventListener("click", abrirInvitacion);
-}
+
 
 //------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const nombre = params.get("nombre");
 
-  const nombreElemento = document.getElementById("nombreInvitado");
-  const mensajeElemento = document.getElementById("mensajeInvitacion");
-  const audio = document.getElementById("musica");
-  const btn = document.getElementById("btnPlay");
-  const progreso = document.getElementById("progreso");
-  
-
-  /* Nombre dinamico para la tarjeta principal */
+  /* ---------Nombre dinamico para la tarjeta principal-------- */
   if(nombre){
     nombreElemento.textContent = nombre;
   } else {  
-    nombreElemento.textContent = "De: Berenice y Luis";
+    nombreElemento.textContent = "De: Daniela y Carlos";
   }
   mensajeElemento.textContent = "Eres muy especial para nosotros por eso queremos que seas parte de esta gran celebracion";
   
-  /* reproduccion de musica */
-  audio.volume = 0.3;
+  /* ----------------reproducción de musica ----------------*/
+  audio.volume = 0.1;
 
   btn.addEventListener("click", () => {
     if (audio.paused) {
@@ -81,17 +62,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* Barra de progreso del sonido */
+  /*------------ Barra de progreso del sonido --------------*/
   audio.addEventListener("timeupdate", () => {
     if (!isNaN(audio.duration)) {
       const porcentaje = (audio.currentTime / audio.duration) * 100;
       progreso.style.width = porcentaje + "%";
     }
   });
+
+  /* ---------------------- link del formulario para personalizar ----------- */
+  if (nombre) {
+    linkFinal += "&entry.750116087=" + encodeURIComponent(nombre);
+  }
+  document.getElementById("btnConfirmar").href = linkFinal
 });
 
-
-const fechaBoda = new Date("Oct 17, 2026 00:00:00").getTime();
+/* ---------Contador de dias que faltan para el evento ------------ */
+//const fechaBoda = new Date("Jul 12, 2026 00:00:00").getTime(); → otra forma de poner la fecha 
+const fechaBoda = new Date("2026-07-12T00:00:00").getTime(); //Formato recomendado
 
 const countdown = setInterval(() => {
   const ahora = new Date().getTime();
@@ -102,29 +90,20 @@ const countdown = setInterval(() => {
   const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
   const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-  document.getElementById("dias").innerHTML = dias;
-  document.getElementById("horas").innerHTML = horas;
-  document.getElementById("minutos").innerHTML = minutos;
-  document.getElementById("segundos").innerHTML = segundos;
+  document.getElementById("dias").textContent = dias;
+  document.getElementById("horas").textContent = horas;
+  document.getElementById("minutos").textContent = minutos;
+  document.getElementById("segundos").textContent = segundos;
 
   if (distancia < 0) {
     clearInterval(countdown);
-    document.querySelector(".contador").innerHTML = "¡Hoy es el gran día!";
+    document.querySelector(".contador").textContent = "¡Hoy es el gran día!";
   }
 
 }, 1000);
+/* sistema de themes */
+const themeLink = document.getElementById("theme-style");
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const nombre = params.get("nombre");
-
-  const formBase = "https://docs.google.com/forms/d/e/1FAIpQLSd4KpJRaWAQDHsJrEnR19OoLFVb4DptZMEIYstfX-uTH25rMQ/viewform?usp=pp_url";
-
-  let linkFinal = formBase;
-
-  if (nombre) {
-    linkFinal += "&entry.750116087=" + encodeURIComponent(nombre);
-  }
-  document.getElementById("btnConfirmar").href = linkFinal
-});
+function cambiarTema(theme){
+  themeLink.href = `css/themes/${theme}.css`;
+}

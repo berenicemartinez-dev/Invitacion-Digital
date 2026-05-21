@@ -4,12 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* variables para colores */
-:root {
-  --azul: #326e92; /* var(--azul) */
-  --dorado: #C5A059; /* var(--dorado) */
-  --azul-oscuro: #004aad; /* var(--azul-oscuro) */
-  --texto: #2c4a6b; /* var(--texto) */
+
+
+html{
+  scroll-behavior: smooth;
 }
 /* Para las animaciones */
 @keyframes fadeIn {
@@ -32,10 +30,9 @@ section {
   margin: 0 auto;
 }
 
-
 /* Estilos para la parte del sobre con animacion y boton */
 .sobre-container {
-  background-image: url('../img/fondoAzul.png');
+  background-image: var(--preview);
   background-size: cover;
   min-height: 100vh;
   background-position: center;
@@ -43,71 +40,63 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction:column;
   padding: 20px;
-}
+  gap:20px;
+} 
 .boda{
   margin-top:-4rem;
   margin-bottom: 30px;
   font-family: 'tangerine', cursive;
   font-size: 60px;
-  color: var(--azul-oscuro);
+  color: var(--color-accent);
 }
 .sobre {
   width: 430px;
   height: 350px; 
-  background: white;
-  background-image: 
-  linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-  url("../img/Nuestraboda1.png");
- /*  background-image: url('../img/Nuestraboda1.png'); */
+  background-image: var(--sobre-tarjeta);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
  
-  border-radius: 12px;
+  border-radius: var(--radio);
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: var(--sombra-suave);
   animation: fadeIn 1.5s ease;
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
 .nombre {
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 600;
-  margin-top: -3px;
+  margin-top: 10px;
   line-height: 1.4;
-  color: var(--azul);
+  color: var(--color-primary);
 }
 .mensaje {
-  margin-top: -5px;
-  font-size: 20px;
+  margin-top: 20px;
+  font-size: 22px;
   opacity: 0.8;
-  color: var(--texto);
+  color: var(--text-message);
   font-weight: 700;
-  letter-spacing: 0.2px;
-  line-height: 1.3;
+  letter-spacing: 0.4px;
+  line-height: 1.5;
   padding: 0 2rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  text-shadow: var(--sombra-message-tarjeta);
 }
 .sobre.abriendo {
   transform: scale(0.9);
   opacity: 0;
   transition: all 0.6s ease;
 }
-
 .sobre button {
-  background: var(--azul-oscuro);
-  color: white;
+  background: var(--color-accent);
+  color: var(--text-light);
   border: none;
   padding: 12px 25px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 1rem;
-}
-.sello{
-  max-width: 40%;
-  margin-top: -2rem;
-  cursor: pointer;
+  margin-top: 2rem;
 }
 .sobre button:hover {
   opacity: 0.8;
@@ -117,19 +106,18 @@ para cuando aparece despues del sobre */
 .loader {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--loader-soft);
   display: none;
   justify-content: center;
   align-items: center;
   text-align: center;
   z-index: 9999;
   font-size: 2rem;
-  color: var(--dorado);
-  font-family: 'Playfair Display', serif;
+  color: var(--color-secondary);
+  font-family: var(--font-secondary-text);
   letter-spacing: 1px;
-font-style: italic;
+  font-style: italic;
 }
-
 .loader.mostrar {
   display: flex;
   animation: fadeIn 0.5s ease;
@@ -152,7 +140,7 @@ font-style: italic;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/fondo.png');
+  background-image: var(--fondo-desktop);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -162,23 +150,23 @@ font-style: italic;
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.4);
+  background: var(--background-light);
 }
 /* Alineacion de todo el texto */
 main{
-    text-align: center;
-    padding-top: 40px;
+  text-align: center;
+  padding-top: 40px;
 } 
 /* Primera parte de la invitacion */
 .hero {
   animation: fadeIn 2s ease;
   text-align: center;
   padding: 70px 20px;
-  color: var(--azul);
-  backdrop-filter: blur(2px); 
-  background-color: rgba(255,255,255,0.3);
+  color: var(--color-primary);
+  backdrop-filter: var(--filter-cards); 
+  background-color: var(--color-hero);
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: var(--sombra-suave);
   margin-top: 60px;
 }
 .subtitulo {
@@ -191,16 +179,15 @@ main{
   font-family: 'tangerine', cursive;
   font-weight: 700;
   font-size: 5rem;
-  color: var(--dorado);
-  text-shadow: 3px 3px 7px hsl(39, 48%, 56%);
+  color: var(--color-secondary);
+  text-shadow: var(--text-name-shadow);
   margin: 10px 0;
 }
 .hero p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
 }
 .fecha {
-  font-size: 1.2rem;
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -209,29 +196,29 @@ main{
   flex: 1;
   content: '';
   padding: 1px;
-  background: linear-gradient(to right, #ccc 0%, #333 50%, #ccc 100%);
+  background: var(--linear-date);
   margin: 5px;
 }
 /* Estilos para todos los encabezados en nivel 2 */
 h2{
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-secondary-text);
   margin: 30px auto;
-  color: var(--dorado);
+  color: var(--color-secondary);
   font-size: 2rem;
 }
 /* Estilos para el reproductor de musica */
 .player {
   align-items: center;
   gap: 12px;
-  background: rgba(255,255,255,0.3);
+  background: var(--color-hero);
   backdrop-filter: blur(6px);
   padding: 10px 15px;
   border-radius: 15px;
   width: 260px;
   margin: 20px auto;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-   opacity: 0;
+  box-shadow: var(--shadow-player);
+  opacity: 0;
   transform: translateY(20px);
   animation: aparecerPlayer 0.8s ease forwards;
   animation-delay: 0.5s;
@@ -246,27 +233,26 @@ h2{
 }
 .player .artista {
   font-size: 0.8rem;
-  color: #777;
+  color: var(--text-soft);
 }
 .barra {
   width: 100%;
   height: 4px;
-  background: rgba(0,0,0,0.1);
+  background: var(--bar-player);
   border-radius: 5px;
   margin-top: 8px;
   overflow: hidden;
 }
-
 .progreso {
   height: 100%;
   width: 0%;
-  background: var(--dorado);
+  background: var(--color-secondary);
   transition: width 0.2s linear;
 }
 #btnPlay {
   background: transparent;
   border: none;
-  color: var(--azul);
+  color: var(--color-primary);
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -277,8 +263,8 @@ h2{
 /* Estilos para el contador de dias */
 .titulo-contador {
   text-align: center;
-  font-family: 'Playfair Display', serif;
-  color: var(--dorado);
+  font-family: var(--font-secondary-text);
+  color: var(--color-secondary);
   margin: 50px auto;
 }
 .contador {
@@ -287,20 +273,20 @@ h2{
   gap: 15px;
   margin-top: 1px;
   font-size: large;
- 
 }
 .tiempo {
   text-align: center;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(5px);
+  background: var(--color-hero);
+  backdrop-filter: var(--filter-cards); 
   padding: 5px;
-  border-radius: 12px;
+  border-radius: var(--radio);
   min-width: 70px;
+  box-shadow: var(--shadow-player);
 }
 .tiempo span {
   font-size: 32px;
   font-weight: bold;
-  color: var(--azul);
+  color: var(--color-primary);
   display: block;
   letter-spacing: 2px;
 }
@@ -308,26 +294,51 @@ h2{
   font-size: 12px;
   letter-spacing: 2px;
   margin-top: 5px;
-  color: var(--dorado);
+  color: var(--color-secondary);
 }
 /* imagen */
-.anillos{
- width: 50%;
+.gallery{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:14px;
+
+  margin:50px auto;
+}
+
+.gallery img{
+  width:110px;
+  border-radius:12px;
+  object-fit:cover;
+
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gallery img:nth-child(1),
+.gallery img:nth-child(3){
+  height:220px;
+  margin-top:25px;
+}
+
+.gallery img:nth-child(2){
+  height:300px;
+}
+.imgubicaacion{
+  width: 50%;
   max-width: 150px;
   margin: 50px auto 20px;
   display: block;
   opacity: 0.8;
   border-radius: 10px;
-}
+} 
 /* Estilos para los iconos  */
 i {
-  color: var(--dorado); /* dorado elegante */
+  color: var(--color-secondary); /* dorado elegante */
   margin-right: 8px;
   font-size: 16px;
-  text-shadow: 0 0 5px rgba(201,166,70,0.5);
+  text-shadow: var(--icon-shadow);
   transition: transform 0.2s ease;
 }
-
 i:hover {
   transform: scale(1.2);
 }
@@ -338,36 +349,28 @@ i:hover {
 }
 .padres{
   display: flex;
-   align-items: center;
   justify-content: center;
   gap: 30px;
   overflow-x: auto;
   padding: 5px;
   scroll-snap-type: x mandatory;
 }
-.nombres {
-  max-width: 200px;
-}
 .nombres h3{
   margin: 5px 0;
   font-weight: bold;
-  color: var(--azul);
+  color: var(--color-primary);
 }
 .nombres span{
   display: block;
   margin: 10px 0;
-  color: #6e6e6e;
+  color: var(--text-soft);
   font-weight: bold;
 }
 .vertical { 
   height: 140px;
   width: 2px;
-  background: linear-gradient(to bottom, transparent, var(--azul-oscuro), transparent);
-  position: absolute;
+  background: linear-gradient(to bottom, transparent, var(--color-accent), transparent);
   margin: 0 10px;
-/*   left: 50%;
-   top: 50%; 
-  transform: translate(-50%, -50%); */
 }
 /* Estilos para los nombres de los padrinos 
 en un slider */
@@ -389,149 +392,191 @@ en un slider */
 /* TARJETAS */
 .card {
   min-width: 260px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(2px);
+  background: var(--background-card);
+  backdrop-filter: var(--filter-cards);
   border-radius: 15px;
   padding: 30px 20px;
   scroll-snap-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: var(--box-shadow-card);
+  border:var(--border-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 /* HOVER */
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  /* transform: scale(1.05); */
+  box-shadow: var(--shadow-card-hover);
 }
 /* TEXTO */
 .tipo {
   font-size: 18px;
   letter-spacing: 2px;
-  color: var(--dorado);
+  color: var(--color-secondary);
   margin-bottom: 15px;
 }
 .card h3 {
   margin: 5px 0;
   font-weight: bold;
-  color: var(--azul);
+  color: var(--color-primary);
 }
 .card span {
-    font-weight: bold;
+  font-weight: bold;
   display: block;
   margin: 10px 0;
-   color: #6e6e6e;
+  color: var(--text-soft);
 }
 /* Texto  */
 .frase{
-  color: var(--azul-oscuro);
+  color: var(--color-accent);
   font-size: x-large;
   margin-top: 1rem;
 }
-
- .ceremony,
-.reception {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-between; 
-    gap: 20px;
-    overflow-x: auto;
-    padding: 10px;
-    scroll-snap-type: x mandatory;
-    color: var(--azul-oscuro);
-    font-size: larger;
-    
+.ceremony, .reception {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+  color: var(--color-accent);
+  font-size: larger;    
 }
 .location {
   text-decoration: none;
-  border-bottom: 1px solid #6c63ff;
+  border-bottom: var(--border-test-link);
 }
 .iglesia{
-  color: var(--azul);
+  color: var(--color-primary);
 } 
-.reception {
-  margin-left: auto;
-   
-}
-
 .salon{
-    color: var(--azul);
+  color: var(--color-primary);
 } 
 .horaCeremony h3,
 .horaReception h3 {
-  font-size:x-large;
-  
+  font-size:x-large; 
 }
-
-/*  */
+/* linea para lugar y hora */
 .lineaCorta{
   width: 3px;
   height: 70px;
-  background: linear-gradient(to bottom, #dbe4f5, var(--azul-oscuro), #dbe4f5);
+  background: linear-gradient(to bottom, #dbe4f5, var(--color-accent), #dbe4f5);
   margin: 0 10px;
   opacity: 0.7;
 }
-
 .dressCode{
   font-size: large;
 }
-
 .confirmacion {
   text-align: center;
   margin: 60px 20px;
   font-size: large;
-
 }
-
 .btn-confirmar {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
-  background-color: #c9a46c; /* dorado */
-  color: white;
+  background-color:var(--boton-confirmar) ; 
+  color: var(--text-light);
   text-decoration: none;
   border-radius: 25px;
   font-weight: bold;
-  /* transition: 0.3s; */
   cursor: pointer;
   transition: transform 0.2s ease;
-  box-shadow: 0 8px 20px rgba(197,160,89,0.3);
+  box-shadow: var(--shadow-btn-confirmar);
   font-size: 1rem;
 }
-
 .btn-confirmar:hover {
-  background-color: #b8935c;
-   transform: scale(1.05);
+  background-color: var(--hover-btn-confirmar);
+  transform: scale(1.05);
 }
 .canciones, .regalos{
   font-size: large;
 } 
-.gift i{
-  font-size: 3rem;
-  margin-top: 20px;
-  text-shadow: 0 0 10px rgba(201,166,70,0.8);
+.gift{
+  font-size: 22px;
+  text-decoration: none;
+  color: var(--color-secondary);
+  text-shadow:var(--gift-text-shadow);
+  border-bottom: 1px solid var(--color-secondary);
 }
+.gift i{
+  font-size: 24px;
+  margin-top: 1rem;
+} 
 .footer {
-   text-align: center;
+  text-align: center;
   padding: 30px 20px;
   font-size: 0.85rem;
-  color: #888;
+  color: var(--text-soft);
   opacity: 0.8;
-  /* text-align: center;
-  margin: 50px 0 20px;
-  font-size: 0.75rem;
-  color: #888; */
 }
-
 .creditos {
   margin-top: 5px;
   opacity: 0.6;
 }
-/* =========================
-   RESPONSIVE (CELULAR)
-========================= */
-@media (max-width: 600px) {
 
+/* ==================================================
+    THEMES
+================================================== */
+/* botones para cambio de thema */
+.theme-selector{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  align-items: center;
+
+  background: var(--background-light);
+  backdrop-filter: blur(5px);
+
+  padding: 12px 18px;
+  border-radius: 30px;
+
+  width: fit-content;
+  margin: 20px auto;
+}
+.theme-selector button{
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+}
+.theme-blue{
+  background: var(--selector-theme-blue);
+}
+.theme-green{
+  background: var(--selector-theme-green);
+}
+.theme-desert{
+  background: var(--selector-theme-desert);
+}
+.theme-ivory{
+  background: var(--selector-theme-ivory);
+}
+.theme-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+.theme-btn.activo {
+  border: 2px solid var(--text-light);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
+}
+
+/* ==================================================
+  RESPONSIVE (CELULAR)
+================================================== */
+@media (max-width: 600px) {
+  .fondo{
+    background-image: var(--fondo-mobile);
+  }
   .loader{
     font-size: 1rem;
   }
@@ -539,52 +584,58 @@ en un slider */
   .hero {
     padding: 40px 15px;
   }
-
   .hero h1 {
     font-size: 3rem; /* antes 5rem */
   }
-
   .fecha {
     font-size: 1rem;
   }
-
   /* CONTADOR */
   .contador {
     flex-wrap: wrap;
     gap: 10px;
   }
-
   .tiempo {
     min-width: 60px;
     padding: 8px;
   }
-
   .tiempo span {
     font-size: 24px;
   }
-
   /* IMAGEN */
   img {
     max-width: 60%;
   }
+  .gallery{
+    gap:10px;
+  }
 
+  .gallery img{
+    width:90px;
+  }
+
+  .gallery img:nth-child(1),
+  .gallery img:nth-child(3){
+    height:180px;
+  }
+
+  .gallery img:nth-child(2){
+    height:240px;
+  }
   /* PADRES */
   .padres {
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-
   .vertical {
     display: none; /* 👈 ocultamos la línea en celular */
   }
-
   /* TARJETAS */
   .card {
     min-width: 220px;
     padding: 20px 15px;
   }
-
   /* CEREMONIA Y RECEPCIÓN */
   .ceremony,
   .reception {
@@ -594,15 +645,15 @@ en un slider */
     text-align: center;
     transform: none; /* quitamos desplazamientos raros */
     min-width: 260px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    backdrop-filter: blur(2px);
+    box-shadow: var(--box-shadow-card);
+    backdrop-filter: var(--filter-cards);
+    border:var(--border-card);
     border-radius: 25px;
   }
   .reception {
     transform: none;
     margin-top: 25px;
   }
-
   .iglesia,
   .salon {
     transform: none;
@@ -615,25 +666,19 @@ en un slider */
   .lineaCorta{
     display: none;
   }
-
   /* FRASES */
   .frase {
     font-size: 20px;
     padding: 0 10px;
   }
-
   /* BOTÓN */
   .btn-confirmar {
     width: 80%;
   }
-
   /* SECCIONES */
   .canciones,
   .regalos {
     width: 90%;
-  }
-  .gift i{
-    width: 75%;
   }
 }
  
