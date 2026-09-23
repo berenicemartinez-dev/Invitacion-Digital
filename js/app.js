@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ---------Contador de dias que faltan para el evento ------------ */
 //const fechaBoda = new Date("Jul 12, 2026 00:00:00").getTime(); → otra forma de poner la fecha 
-const fechaBoda = new Date("2026-07-12T00:00:00").getTime(); //Formato recomendado
+const fechaBoda = new Date("2030-07-12T00:00:00").getTime(); //Formato recomendado
 
 const countdown = setInterval(() => {
   const ahora = new Date().getTime();
